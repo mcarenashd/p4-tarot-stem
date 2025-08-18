@@ -11,6 +11,6 @@ export const getAllCards = async() =>{
     }
     catch(error) {
         console.error(`getAllCards error:`, error.message);
-        throw error;
+        return [];
     }
 }
