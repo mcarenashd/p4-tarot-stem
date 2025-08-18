@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
+import HomePage from "../pages/Home";
 import CardDetailPage from "../pages/CardDetailPage";
 
-const Router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -12,10 +12,10 @@ const Router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/CardDetailPage/:id",
+        path: "/card/:id",
         element: <CardDetailPage />,
       },
     ],
   },
 ]);
-export default Router
+export default router
