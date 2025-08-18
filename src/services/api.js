@@ -13,4 +13,15 @@ export const getAllCards = async() =>{
         console.error(`getAllCards error:`, error.message);
         return [];
     }
-}
+};
+
+export const getCardById = async (id) =>{
+    try{
+        const response = await axios.get(`${API_URL}/${id}`);
+        return response.data;
+    }
+    catch(error){
+        console.error(`getCardById error:`, error.message);
+        return null;
+    }
+};
