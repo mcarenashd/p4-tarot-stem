@@ -21,14 +21,21 @@ function CardReading() {
   if (isLoading) {
     return <p>Las tarjetas se están cargando...</p>;
   }
-  function handleCardClick(selectedCard) {
-    if (selectedCards.length < 3) {
-      setSelectedCards([...selectedCards, selectedCard]);
-    } else {
-      alert("Ya has seleccionado 3 cartas.");
-    }
-  }
+function handleCardClick(clickedCard) {
+  const isAlreadySelected = selectedCards.some(
+    (card) => card.id === clickedCard.id
+  );
 
+  if (isAlreadySelected) {
+    alert("Esa carta ya ha sido seleccionada.");
+    return; 
+  }
+  if (selectedCards.length < 3) {
+    setSelectedCards([...selectedCards, clickedCard]);
+  } else {
+    alert("Ya has seleccionado 3 cartas.");
+  }
+}
     function handleResetClick() {
       setSelectedCards([ ]);
   }
