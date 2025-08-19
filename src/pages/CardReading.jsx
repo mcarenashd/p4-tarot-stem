@@ -28,10 +28,14 @@ function CardReading() {
     }
   }
 
+    function handleResetClick() {
+      setSelectedCards([ ]);
+  }
 
   return (
     <div>
       <h1>Lectura del Tarot STEM</h1>
+      <button onClick={handleResetClick}>Resetear Lectura</button>
       <div className="reading-area">
         <h2>Tu Lectura</h2>
         <div className="selected-cards-display">
