@@ -1,46 +1,50 @@
 import { useState, useEffect } from "react";
-import {useParams, Link} from  "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getCardById } from "../services/api";
 
-function CardDetailPage(){
-    const [card, setCard] = useState("")
-    const [isLoading, setIsLoading] = useState(true)
-    const {id} = useParams();
-    console.log("ID de Params", id);
+function CardDetailPage() {
+  const [card, setCard] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const { id } = useParams();
+  console.log("ID de Params", id);
 
-    useEffect (()=>{
-    const loadOneCard = async () =>{
-        try {
+  useEffect(() => {
+    const loadOneCard = async () => {
+      try {
         console.log(`Trayendo la carta de id: " ${id}`);
         const data = await getCardById(id);
         setCard(data);
-        setIsLoading(false)
-        console.log("Funciona el llamado")
-        }
-      catch (error) {
+        setIsLoading(false);
+        console.log("Funciona el llamado");
+      } catch (error) {
         console.error("error:", error);
-      } 
-    }
+      }
+    };
     loadOneCard();
-},[]);
-if (isLoading){
-    return <p>Las tarjetas se están cargando...</p>
- }
-   if (!card) {
+  }, []);
+  if (isLoading) {
+    return <p>Las tarjetas se están cargando...</p>;
+  }
+  if (!card) {
     return <p>Carta no encontrada</p>;
   }
- 
-    return (
-        <div>
-            <h1>Tarot STEM</h1>
-            <div className="cards-container">
-            {card.arcaneName}
-            {card.arcaneDescription}
-            <Link to ="/">Volver a la baraja</Link>
-            </div>
-        </div>
-    )
+
+  return (
+    <div>
+      <h1>Tarot STEM</h1>
+      <div className="cards-container">
+        <img
+          src={card.arcaneImage.imageSrc}
+          alt={card.arcaneName}
+          style={{ maxWidth: "200px" }}
+        />{" "}
+        <br />
+        {card.arcaneNumber} <br />
+        {card.arcaneName} <br />
+        {card.arcaneDescription} <br />
+        <Link to="/">Volver a la baraja</Link>
+      </div>
+    </div>
+  );
 }
 export default CardDetailPage;
-
-
