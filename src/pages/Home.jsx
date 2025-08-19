@@ -23,16 +23,17 @@ function HomePage() {
     return <p>Las tarjetas se están cargando...</p>;
   }
 
-return (
+  return (
     <div>
-        <h1>Tarot STEM</h1>
-        <div className="cards-container">
-            {cards.map((card) => (
-                <Card key={card.id} card={card} />
-            ))}
-        </div>
+      <h1>Tarot STEM</h1>
+      <Link to="/reading">¿Quieres conocer tu suerte?</Link>
+      <div className="cards-container">
+        {cards.map((card) => (
+          <Card key={card.id} card={card} />
+        ))}
+      </div>
     </div>
-);
+  );
 }
 
 export default HomePage;

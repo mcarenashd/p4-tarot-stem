@@ -1,18 +1,20 @@
+import { Link } from "react-router-dom";
 import "./Card.css";
 
 function Card({ card, onCardClick }) {
-  const handleClick = () => {
-    if (onCardClick) {
-      onCardClick(card);
-    }
-  };
+
+  if (onCardClick) {
+    return (
+      <div className="card-back" onClick={() => onCardClick(card)}>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <div className="cards-container">
-        <div className="card-back" onClick={handleClick}></div>
+    <Link to={`/card/${card.id}`}>
+      <div className="card-back">
       </div>
-    </div>
+    </Link>
   );
 }
-export default Card;
+export default Card

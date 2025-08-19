@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAllCards } from "../services/api";
 import Card from "../components/Card";
+import { Link } from "react-router-dom";
 
 function CardReading() {
   const [cards, setCards] = useState([]);
@@ -35,6 +36,7 @@ function CardReading() {
   return (
     <div>
       <h1>Lectura del Tarot STEM</h1>
+      <Link to="/">Volver a la baraja</Link>
       <button onClick={handleResetClick}>Resetear Lectura</button>
       <div className="reading-area">
         <h2>Tu Lectura</h2>
