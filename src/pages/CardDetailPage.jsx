@@ -14,7 +14,7 @@ function CardDetailPage(){
     useEffect (()=>{
     const loadOneCard = async () =>{
         try {
-        console.log("Trayendo la carta de id: " `${API_URL}/${id}`);
+        console.log(`Trayendo la carta de id: " ${id}`);
         const data = await getCardById(id);
         setCard(data);
         setIsLoading(false)

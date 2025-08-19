@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { Outlet } from 'react-router-dom';
 import './App.css'
 import HomePage from './pages/Home.jsx'
 function App() {
 
   return (
-    <>
-      <HomePage/>
-    </>
+    <div className="App">
+      <Outlet /> 
+    </div>
   )
 }
 
