@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import {useParams, Link} from  "react-router-dom";
 import { getCardById } from "../services/api";
 
-
-const API_URL = "https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot"
-
 function CardDetailPage(){
     const [card, setCard] = useState("")
     const [isLoading, setIsLoading] = useState(true)

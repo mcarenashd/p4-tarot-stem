@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllCards } from "../services/api";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Card from "../components/Card";
 
 function HomePage() {
   const [cards, setCards] = useState([]);
@@ -22,19 +23,16 @@ function HomePage() {
     return <p>Las tarjetas se están cargando...</p>;
   }
 
-  return (
+return (
     <div>
-      <h1>Tarot STEM</h1>
-      <div className="cards-container">
-        {cards.map((card) => (
-          <Link to={`/card/${card.id}`} key={card.id}>
-            <div className="card-back">
-            </div>
-          </Link>
-        ))}
-      </div>
+        <h1>Tarot STEM</h1>
+        <div className="cards-container">
+            {cards.map((card) => (
+                <Card key={card.id} card={card} />
+            ))}
+        </div>
     </div>
-  );
+);
 }
 
 export default HomePage;
