@@ -18,8 +18,12 @@ function CardReading() {
     loadCards();
   }, []);
 
-  function handleCardClick(selectedCards) {
-        setSelectedCards([...selectedCards, selectedCards]);
+  function handleCardClick(selectedCard) {
+        if (selectedCards.length <3){
+        setSelectedCards([...selectedCards, selectedCard]);
+    } else {
+        alert("Ya has seleccionado 3 cartas.")
+    }
   }
 
   console.log("Valor de 'cards' al momento de dibujar:", cards);
@@ -28,10 +32,21 @@ function CardReading() {
   }
   return (
     <div>
-      <h1>Tarot STEM</h1>
+      <h1>Lectura del Tarot STEM</h1>
+            <div className="reading-area">
+        <h2>Tu Lectura</h2>
+        <div className="selected-cards-display">
+          {selectedCards.map((card, index) => (
+            <div key={card.id} className="selected-card">
+              <h4>{['Pasado', 'Presente', 'Futuro'][index]}</h4>
+              <p>{card.arcaneName}</p>
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="cards-container">
         {cards.map((card) => (
-          <Card key={card.id} card={card} />
+          <Card key={card.id} card={card} onCardClick={handleCardClick} />
         ))}
       </div>
     </div>
