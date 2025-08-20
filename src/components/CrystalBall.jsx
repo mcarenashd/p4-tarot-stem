@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, MeshTransmissionMaterial} from "@react-three/drei";
+import './CrystalBall.css'
 
 function CrystalBallScene() {
   const meshRef = useRef();
@@ -18,7 +19,7 @@ function CrystalBallScene() {
   return (
     <>
       {/* Grupo que contiene bola + efecto interno */}
-      <group ref={meshRef} scale={[2, 2, 2]} position={[0, 1, 0]}>
+      <group ref={meshRef} scale={[2.2, 2.2, 2.2]} position={[0, 0.5, 0]}>
         {/* Bola de cristal */}
         <mesh>
           <sphereGeometry args={[1, 89, 89]} />
@@ -54,7 +55,7 @@ function CrystalBallScene() {
       </group>
 
       {/* BASE CILÍNDRICA CON MATERIAL FÍSICO */}
-      <mesh castShadow receiveShadow position={[0, -1, 0]}>
+      <mesh castShadow receiveShadow position={[0, -1.5, 0]}>
         <cylinderGeometry args={[0.7, 0.7, 0.5, 64]} />
         <meshPhysicalMaterial
           color="#FFD700"
@@ -66,7 +67,7 @@ function CrystalBallScene() {
       </mesh>
 
       {/* BASE CÓNICA INFERIOR */}
-      <mesh castShadow receiveShadow position={[0, -1.5, 0]}>
+      <mesh castShadow receiveShadow position={[0, -2, 0]}>
         <coneGeometry args={[1, 0.5, 64]} />
         <meshPhysicalMaterial
           color="#D4AF37"
@@ -89,8 +90,8 @@ function CrystalBall() {
   return (
     <Canvas
       shadows
-      style={{ height: "100%", width: "100%" }}
-      camera={{ position: [0, 0, 5], fov: 50 }}
+      style={{ height: "90%", width: "90%" }}
+      camera={{ position: [0, 0, 7], fov: 50 }}
     >
       <ambientLight intensity={0.5} />
       <pointLight position={[5, 5, 5]} intensity={1} />
