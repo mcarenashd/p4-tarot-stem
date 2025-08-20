@@ -90,7 +90,7 @@ function CrystalBall() {
   return (
     <Canvas
       shadows
-      style={{ height: "90%", width: "90%" }}
+      style={{ height: "100%", width: "100%" }}
       camera={{ position: [0, 0, 7], fov: 50 }}
     >
       <ambientLight intensity={0.5} />

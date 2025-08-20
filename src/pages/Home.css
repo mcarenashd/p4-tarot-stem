@@ -1,3 +1,39 @@
-.crystal-ball-container {
+/* src/pages/Home.css */
 
+.home-background-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(-45deg, #0e032a, #2a0a4b, #3b1b6b, #1b073b);
+  background-size: 400% 400%;
+}
+
+.home-content {
+  /* Hacemos que este div flote sobre el fondo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* El resto de estilos no necesitan cambios */
+.nav-button {
+  padding: 15px 30px;
+  color: white;
+  background-color: rgba(106, 13, 173, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2em;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
