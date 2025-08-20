@@ -1,8 +1,13 @@
-function Home (){
-return(
-    <>
-    <h1>HOLA!</h1>
-    </>
-)
+import { Link } from "react-router-dom";
+import CrystalBall from "../components/CrystalBall";
+import "./Home.css"
+
+function Home() {
+  return (
+<>
+HOLA!
+<CrystalBall/>
+</>
+  );
 }
 export default Home
