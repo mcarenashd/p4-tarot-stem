@@ -1,4 +1,3 @@
-/* src/index.css */
 html, body, #root {
   margin: 0;
   padding: 0;
@@ -7,6 +6,11 @@ html, body, #root {
 }
 
 body {
-  /* background-color: #1a1a1a; */ /* <--- Borra o comenta esta línea */
+  /* 👇 1. Aquí defines el fondo de pantalla para TODAS las páginas */
+background: linear-gradient(-45deg, #0e032a, #2a0a4b, #3b1b6b, #1b073b);  
+  /* 👇 2. Aquí defines el tipo de letra para TODA la aplicación */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Puedes cambiar esta por la que prefieras */
+  
+  /* Asegúrate de que el color del texto sea visible sobre el fondo oscuro */
   color: white;
 }
