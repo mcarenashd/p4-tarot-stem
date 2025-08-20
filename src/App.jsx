@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import './App.css'
-import HomePage from './pages/Home.jsx'
+import HomePage from './pages/CardsPage.jsx'
 function App() {
 
   return (

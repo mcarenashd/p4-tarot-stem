@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { getAllCards } from "../services/api";
-import "./Home.css";
+import "./CardsPage.css";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 
-function HomePage() {
+function CardsPage() {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -36,4 +36,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default CardsPage;
