@@ -1,11 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import './App.css'
-import HomePage from './pages/CardsPage.jsx'
+import CardsPage from './pages/CardsPage.jsx'
+import Footer from './components/Footer.jsx';
 function App() {
 
   return (
     <div className="App">
       <Outlet /> 
+      <Footer />
     </div>
   )
 }

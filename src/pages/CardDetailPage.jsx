@@ -42,7 +42,7 @@ function CardDetailPage() {
         {card.arcaneNumber} <br />
         {card.arcaneName} <br />
         {card.arcaneDescription} <br />
-        <Link to="/">Volver a la baraja</Link>
+        <Link to="/CardsPage">Volver a la baraja</Link>
       </div>
     </div>
   );

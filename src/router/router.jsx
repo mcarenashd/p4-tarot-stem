@@ -3,6 +3,7 @@ import App from "../App.jsx";
 import CardsPage from "../pages/CardsPage.jsx";
 import CardDetailPage from "../pages/CardDetailPage";
 import CardReading from "../pages/CardReading.jsx";
+import Home from "../pages/Home.jsx";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "/CardsPage",
         element: <CardsPage />,
       },
       {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
         path: "/reading",
         element: <CardReading />,
+      },
+         {
+        path: "/",
+        element: <Home />,
       },
     ],
   },

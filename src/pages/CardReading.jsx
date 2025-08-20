@@ -43,7 +43,7 @@ function handleCardClick(clickedCard) {
   return (
     <div>
       <h1>Lectura del Tarot STEM</h1>
-      <Link to="/">Volver a la baraja</Link>
+      <Link to="/CardsPage">Volver a la baraja</Link>
       <button onClick={handleResetClick}>Resetear Lectura</button>
       <div className="reading-area">
         <h2>Tu Lectura</h2>
