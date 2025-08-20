@@ -3,12 +3,16 @@ import "./Card.css";
 
 function Card({ card, onCardClick }) {
 
-  if (onCardClick) {
-    return (
-      <div className="card-back" onClick={() => onCardClick(card)}>
-      </div>
-    );
-  }
+if (onCardClick) {
+  return (
+    <button
+      type="button"
+      className="card-back"
+      onClick={() => onCardClick(card)}
+    >
+    </button>
+  );
+}
 
   return (
     <Link to={`/card/${card.id}`}>
