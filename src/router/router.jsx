@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App.jsx";
 import CardsPage from "../pages/CardsPage.jsx";
-import CardDetailPage from "../pages/CardDetailPage";
+import CardDetail from "../pages/CardDetail";
 import CardReading from "../pages/CardReading.jsx";
 import Home from "../pages/Home.jsx";
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/card/:id",
-        element: <CardDetailPage />,
+        element: <CardDetail/>,
       },
             {
         path: "/reading",

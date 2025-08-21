@@ -56,3 +56,19 @@
   background-size: 550px 550px, 350px 350px, 250px 250px;
   background-position: 0 0, 40px 60px, 130px 270px;
 }
+.nav-button-small{
+  padding: 15px 30px;
+  color: black;
+  background-color: #d4af37;
+  font-family: "Inter", sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.0rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 10px;
+}
+.go-back-link{
+    margin-top: 10px;
+    text-align: center;
+}

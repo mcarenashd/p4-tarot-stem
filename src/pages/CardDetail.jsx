@@ -60,7 +60,9 @@ function CardDetailPage() {
           <br />
         </div>
       </div>
-      <Link to="/CardsPage">Volver a la baraja</Link>
+      <div className="go-back-link">
+      <Link className="nav-button-small" to="/CardsPage">Volver a la baraja</Link>
+      </div>
     </div>
   );
 }
