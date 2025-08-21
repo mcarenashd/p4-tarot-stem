@@ -1,7 +1,5 @@
-
-/* src/components/CrystalBall.css */
 .crystal-ball-container {
-  width: 600px;  /* Le damos un tamaño fijo o relativo */
+  width: 600px; 
   height: 600px;
-  /* Ya no necesita flex-grow ni display: flex aquí */
+  margin-top: 10%;
 }
