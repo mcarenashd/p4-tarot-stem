@@ -4,6 +4,19 @@ import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
+import "./CardReading.css";
+
+function shuffleArray(array) {
+  let shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    //  Elegimos un índice aleatorio entre 0 e i
+    const j = Math.floor(Math.random() * (i + 1));
+    //  Intercambiamos el elemento actual con el elemento del índice aleatorio
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 
 function CardReading() {
   const [cards, setCards] = useState([]);
@@ -22,6 +35,11 @@ function CardReading() {
   }, []);
   if (isLoading) {
     return <p>Las tarjetas se están cargando...</p>;
+  
+}
+  function handleShuffleClick() {
+  const shuffled = shuffleArray(cards); // Usamos la función que ya teníamos
+  setCards(shuffled); // Actualizamos el estado con las cartas barajadas
   }
   function handleCardClick(clickedCard) {
     const isAlreadySelected = selectedCards.some(
@@ -41,10 +59,10 @@ function CardReading() {
       setSelectedCards([...selectedCards, clickedCard]);
     } else {
       Swal.fire({
-        title: '¡Lectura Completa!',
-        text: 'Ya has seleccionado 3 cartas.',
-        icon: 'info',
-        confirmButtonColor: '#6a0dad'
+        title: "¡Lectura Completa!",
+        text: "Ya has seleccionado 3 cartas.",
+        icon: "info",
+        confirmButtonColor: "#6a0dad",
       });
     }
   }
@@ -54,27 +72,45 @@ function CardReading() {
 
   return (
     <div>
-      <h1>Lectura del Tarot STEM</h1>
-      <p />
-      Conecta con la sabiduría de las pioneras STEM. Elige hasta 3 cartas que
-      resuenen contigo y descubre qué arquetipos científicos guían tu camino
-      hacia la innovación y el descubrimiento.
-      <br />
-      <Link to="/CardsPage">Volver a la baraja</Link>
-      <button onClick={handleResetClick}>Resetear Lectura</button>
+      <div className="reading-header">
+        <h1>Lectura del Tarot STEM</h1>
+        <p/>
+        Conecta con la sabiduría de las pioneras STEM. Elige hasta 3 cartas que
+        resuenen contigo y descubre qué arquetipos científicos guían tu camino
+        hacia la innovación y el descubrimiento.
+        <br/>
+        <div className="buttons-container">
+        <Link className="nav-button-small" to="/CardsPage">
+          Volver a la baraja
+        </Link>
+        <button className="nav-button-small" onClick={handleResetClick}>
+          Resetear Lectura
+        </button>
+        <button onClick={handleShuffleClick}>Barajar Cartas</button>
+        </div>
+      </div>
+
       <div className="reading-area">
         <h2>Tu Lectura</h2>
         <div className="selected-cards-display">
           {selectedCards.map((card, index) => (
             <div key={card.id} className="selected-card">
-              <h4>{["Pasado", "Presente", "Futuro"][index]}</h4>
+              <h2>{["Pasado", "Presente", "Futuro"][index]}</h2>
+              <img
+                className="tarot-image"
+                src={card.arcaneImage.imageSrc}
+                alt={card.arcaneName}
+                style={{ maxWidth: "200px" }}
+              ></img>
               <p>{card.arcaneName}</p>
               <p>{card.arcaneDescription}</p>
             </div>
           ))}
         </div>
       </div>
-      <hr />
+
+      <hr/>
+
       <div className="cards-container">
         {cards.map((card) => (
           <Card key={card.id} card={card} onCardClick={handleCardClick} />
