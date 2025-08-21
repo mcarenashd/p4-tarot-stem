@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getCardById } from "../services/api";
+import "./CardDetail.css";
 
 function CardDetailPage() {
   const [card, setCard] = useState("");
@@ -31,19 +32,35 @@ function CardDetailPage() {
 
   return (
     <div>
-      <h1>Tarot STEM</h1>
-      <div className="cards-container">
-        <img
-          src={card.arcaneImage.imageSrc}
-          alt={card.arcaneName}
-          style={{ maxWidth: "200px" }}
-        />{" "}
-        <br />
-        {card.arcaneNumber} <br />
-        {card.arcaneName} <br />
-        {card.arcaneDescription} <br />
-        <Link to="/CardsPage">Volver a la baraja</Link>
+      <div className="cards-cont">
+        <div className="card-arcane">
+          <h2>{card.arcaneName}</h2>
+          <br />
+          <img
+            className="tarot-image"
+            src={card.arcaneImage.imageSrc}
+            alt={card.arcaneName}
+            style={{ maxWidth: "200px" }}
+          />{" "}
+          <br />
+          <br />
+          <h2>Número: {card.arcaneNumber}</h2> <br />
+          <p>{card.arcaneDescription}</p> <br />
+        </div>
+        <div className="card-goddess">
+          <h2>{card.goddessName}</h2> <br />
+          <img
+            className="goddess-image"
+            src={card.goddessImage.imageSrc}
+            alt={card.goddessName}
+            style={{ maxWidth: "200px" }}
+          />{" "}
+          <br />
+          <p>{card.goddessDescription}</p>
+          <br />
+        </div>
       </div>
+      <Link to="/CardsPage">Volver a la baraja</Link>
     </div>
   );
 }

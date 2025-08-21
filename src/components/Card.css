@@ -17,7 +17,7 @@
   transition: transform 0.2s ease-in-out;
 
   /* --- Cambios para la imagen de fondo --- */
-  background-image: url('../assets/images/back-card.png'); /* 👈 La ruta a tu imagen */
+  background-image: url('../assets/images/back-cardv2.png'); /* 👈 La ruta a tu imagen */
   background-size: cover; /* 👈 Hace que la imagen cubra toda la carta sin deformarse */
   background-position: center; /* 👈 Centra la imagen en la carta */
 }

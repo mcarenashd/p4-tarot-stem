@@ -1,0 +1,58 @@
+.tarot-image {
+  border-radius: 10px;
+  align-content: center;
+}
+
+.cards-cont {
+  display: flex;
+  gap: 10rem;
+  padding: 1rem;
+}
+
+.card-arcane {
+  border: 1px solid rgba(255, 254, 254, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  /* width: 50vh; */
+  flex: 1;
+  text-align: center;
+  /* --- ESTILOS PARA LAS ESTRELLAS --- */
+
+  /* Capa 1: Estrellas pequeñas */
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 35px
+    ),
+    /* Capa 2: Estrellas medianas */
+      radial-gradient(white, rgba(255, 255, 255, 0.1) 3px, transparent 15px),
+    /* Capa 3: Estrellas grandes y tenues */
+      radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 20px);
+
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+}
+
+.card-goddess {
+  border: 1px solid rgba(255, 254, 254, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  /* width: 50vh; */
+  flex: 1;
+  text-align: center;
+  /* --- ESTILOS PARA LAS ESTRELLAS --- */
+
+  /* Capa 1: Estrellas pequeñas */
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 35px
+    ),
+    /* Capa 2: Estrellas medianas */
+      radial-gradient(white, rgba(255, 255, 255, 0.1) 3px, transparent 15px),
+    /* Capa 3: Estrellas grandes y tenues */
+      radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 20px);
+
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+}

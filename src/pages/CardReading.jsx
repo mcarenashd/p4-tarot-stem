@@ -43,6 +43,7 @@ function handleCardClick(clickedCard) {
   return (
     <div>
       <h1>Lectura del Tarot STEM</h1>
+      <p/>Conecta con la sabiduría de las pioneras STEM. Elige hasta 3 cartas que resuenen contigo y descubre qué arquetipos científicos guían tu camino hacia la innovación y el descubrimiento.<br/>
       <Link to="/CardsPage">Volver a la baraja</Link>
       <button onClick={handleResetClick}>Resetear Lectura</button>
       <div className="reading-area">

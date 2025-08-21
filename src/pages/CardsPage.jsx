@@ -26,7 +26,7 @@ function CardsPage() {
   return (
     <div>
       <h1>Tarot STEM</h1>
-      <Link to="/reading">¿Quieres conocer tu suerte?</Link>
+      <p>Conoce las cartas</p>
       <div className="cards-container">
         {cards.map((card) => (
           <Card key={card.id} card={card} />

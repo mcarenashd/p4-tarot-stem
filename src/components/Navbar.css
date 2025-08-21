@@ -23,6 +23,5 @@ nav {
 .navbar-button:hover{
     text-decoration: underline;
     color: #d4af37;
-    transform: scale(1.3);
-
+    transform: scale(1.2);
 }
