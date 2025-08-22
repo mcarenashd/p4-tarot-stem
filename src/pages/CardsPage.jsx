@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { getAllCards } from "../services/api";
 import "./CardsPage.css";
-import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import deckImg from "../assets/images/barajav2.png"; // imagen de portada (import para bundlers)
 
 function CardsPage() {
   const [cards, setCards] = useState([]);
@@ -10,30 +10,50 @@ function CardsPage() {
 
   useEffect(() => {
     const loadCards = async () => {
-      console.log("Trayendo las cartas de la base de datos");
-      const data = await getAllCards();
-      setCards(data);
-      setIsLoading(false);
-      console.log("Funciona el llamado");
+      try {
+        const data = await getAllCards();
+        setCards(data);
+      } finally {
+        setIsLoading(false);
+      }
     };
     loadCards();
   }, []);
-  console.log("Valor de 'cards' al momento de dibujar:", cards);
+
   if (isLoading) {
-    return <p>Las tarjetas se están cargando...</p>;
+    return (
+      <p role="status" aria-live="polite">
+        Las cartas se están cargando…
+      </p>
+    );
   }
 
   return (
-    <div>
-      <h1>Tarot STEM</h1>
-      <img src="src/assets/images/baraja.png" ></img>
-      <p>Conoce las cartas</p>
-      <div className="cards-container">
+    <main className="cards-page">
+      <header className="cards-hero">
+        <h1 className="home-title">
+          TAROT <span>STEM</span>
+        </h1>
+
+        <div className="hero-media">
+          <img
+            className="deck-hero-image"
+            src={deckImg}
+            alt="Baraja Tarot STEM"
+          />
+        </div>
+        <p className="cards-hero-subtitle">Conoce las cartas</p>
+      </header>
+
+      <section
+        className="cards-container"
+        aria-label="Listado de cartas de Tarot STEM"
+      >
         {cards.map((card) => (
           <Card key={card.id} card={card} />
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
