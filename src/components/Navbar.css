@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Bebas+Neue&family=Cinzel+Decorative:wght@400;700;900&family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
 
+/* Contenedor */
 nav {
+  position: relative;               
   text-align: center;
   padding: 1rem;
   background: #0d0b1a;
   border-top: 1px solid rgba(255,255,255,0.1);
   width: 100%;
-  justify-content: space-around;
   display: flex;
+  justify-content: space-around;  
+  align-items: center;
   font-family: "Inter", sans-serif;
-
+  z-index: 1000;
 }
 
 .navbar-button{
@@ -17,11 +20,62 @@ nav {
   color: white;
   font-size: 1.2rem;
   text-decoration: none;
-
+}
+.navbar-button:hover{
+  text-decoration: underline;
+  color: #d4af37;
+  transform: scale(1.2);
 }
 
-.navbar-button:hover{
-    text-decoration: underline;
-    color: #d4af37;
-    transform: scale(1.2);
+
+.nav-links{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+.menu-toggle{
+  display: none;         
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.menu-toggle span{
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.menu-toggle.is-open span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2){ opacity: 0; }
+.menu-toggle.is-open span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+/* --- Responsive --- */
+@media (max-width: 768px){
+  .menu-toggle{ display: block; }        
+
+  .nav-links{
+    display: none;                        
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: #0d0b1a;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: .75rem 1rem;
+    gap: .75rem;
+  }
+  .nav-links.open{ display: flex; }      
+
+  .navbar-button { padding: .25rem 0; }
+}
+
+@media (min-width: 769px){
+  .nav-links{ display: flex; }
 }
