@@ -6,12 +6,11 @@ import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
 import "./CardReading.css";
 
+/*Función para poder bajarar nuevamente las cartas*/
 function shuffleArray(array) {
   let shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
-    //  Elegimos un índice aleatorio entre 0 e i
     const j = Math.floor(Math.random() * (i + 1));
-    //  Intercambiamos el elemento actual con el elemento del índice aleatorio
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
@@ -37,8 +36,8 @@ function CardReading() {
   
 }
   function handleShuffleClick() {
-  const shuffled = shuffleArray(cards); // Usamos la función que ya teníamos
-  setCards(shuffled); // Actualizamos el estado con las cartas barajadas
+  const shuffled = shuffleArray(cards); 
+  setCards(shuffled); 
   }
   function handleCardClick(clickedCard) {
     const isAlreadySelected = selectedCards.some(
@@ -50,7 +49,7 @@ function CardReading() {
         title: "¡Carta Repetida!",
         text: "Esa carta ya ha sido seleccionada. Por favor, elige otra.",
         icon: "warning",
-        confirmButtonColor: "#6a0dad", // Un color que combine con tu paleta
+        confirmButtonColor: "#6a0dad", 
       });
       return;
     }

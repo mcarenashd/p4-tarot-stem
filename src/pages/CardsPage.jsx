@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllCards } from "../services/api";
 import "./CardsPage.css";
 import Card from "../components/Card";
-import deckImg from "../assets/images/barajav2.png"; // imagen de portada (import para bundlers)
+import deckImg from "../assets/images/barajav2.png"; 
 
 function CardsPage() {
   const [cards, setCards] = useState([]);

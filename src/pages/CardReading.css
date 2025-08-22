@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  margin-top: 2%;
 }
 /*Diseño responsive*/
 @media (max-width: 768px) {

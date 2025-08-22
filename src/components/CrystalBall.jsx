@@ -18,7 +18,6 @@ function CrystalBallScene() {
 
   return (
     <>
-      {/* Grupo que contiene bola + efecto interno */}
       <group ref={meshRef} scale={[2.2, 2.2, 2.2]} position={[0, 0.5, 0]}>
         {/* Bola de cristal */}
         <mesh>

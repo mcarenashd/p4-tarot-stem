@@ -1,22 +1,20 @@
-/* --- PAGE WRAPPER --- */
 .detail-page {
   min-height: 100svh;
   padding: clamp(12px, 2vw, 24px);
 }
 
-/* --- GRID LAYOUT (antes era flex con gap:10rem) --- */
 .cards-cont {
   width: min(100% - 2rem, 1100px);
   margin-inline: auto;
   display: grid;
-  grid-template-columns: 1fr;              /* móvil: 1 columna */
-  gap: clamp(16px, 2.5vw, 32px);           /* espacio fluido */
+  grid-template-columns: 1fr;             
+  gap: clamp(16px, 2.5vw, 32px);           
   align-items: start;
 }
 
 @media (min-width: 768px) {
   .cards-cont {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* desktop: 2 columnas */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
   }
 }
 
@@ -37,13 +35,13 @@
   background-position: 0 0, 40px 60px, 130px 270px;
 }
 
-/* --- IMAGES --- */
+
 .tarot-image,
 .goddess-image {
   display: block;
-  width: min(100%, 360px);   /* responsive */
+  width: min(100%, 360px);   
   height: auto;
-  margin-inline: auto;       /* centradas */
+  margin-inline: auto;       
   border-radius: 10px;
 }
 

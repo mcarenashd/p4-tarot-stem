@@ -4,7 +4,7 @@ import { getCardById } from "../services/api";
 import "./CardDetail.css";
 
 function CardDetailPage() {
-  const [card, setCard] = useState(null);        // ← antes "" (mejor null)
+  const [card, setCard] = useState(null);        
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
@@ -20,8 +20,7 @@ function CardDetailPage() {
       }
     };
     loadOneCard();
-  }, [id]);                                       // ← depende de id
-
+  }, [id]);                                       
   if (isLoading) return <p role="status" aria-live="polite">Cargando carta…</p>;
   if (!card) return <p>Carta no encontrada</p>;
 

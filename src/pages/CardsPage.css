@@ -1,6 +1,6 @@
 .cards-hero { margin-block: clamp(0.25rem, 1.2vw, 0.75rem); }
 .deck-hero-image {
-  width: clamp(200px, 38vw, 360px);
+  width: clamp(100px, 18vw, 36px);
   height: auto;
 align-items: center;
 }
@@ -17,11 +17,10 @@ align-items: center;
 }
 
 .deck-hero-image {
-  width: clamp(220px, 35vw, 420px);
+  width: clamp(100px, 18vw, 36px);
   height: auto;
 }
 
-/* GRID: cartas más anchas por celda */
 .cards-container {
   width: min(100% - 1rem, 1200px);
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -33,4 +32,5 @@ align-items: center;
   .cards-container {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
-  .deck-hero-image { width: clamp(240px, 28vw, 380px);}
+  .deck-hero-image { width: clamp(200px, 18vw, 36px);}
+}
