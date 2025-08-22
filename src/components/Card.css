@@ -30,3 +30,11 @@
   border-color: #c0c0c0; /* Un borde plateado */
   transform: translateY(-5px) scale(1.05); /* La hacemos saltar un poco */
 }
+
+/*Estilos responsive*/
+@media (max-width: 768px) {
+  .card-back {
+    width: 120px;
+    height: 200px;
+  }
+}
