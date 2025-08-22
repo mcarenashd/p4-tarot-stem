@@ -12,13 +12,13 @@ function Home() {
       {/* 👇 Contenedor interno que solo se encarga de centrar el contenido */}
       <div className="home-content">
         <Link to="/CardsPage" className="nav-button">
-          Ver la Baraja
+          CONOCE LA BARAJA
         </Link>
         <div className="crystal-ball-container">
           <CrystalBall />
         </div>
         <Link to="/reading" className="nav-button">
-          Probar Suerte
+          CONOCE TU SUERTE
         </Link>
       </div>
       

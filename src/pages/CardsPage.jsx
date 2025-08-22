@@ -26,6 +26,7 @@ function CardsPage() {
   return (
     <div>
       <h1>Tarot STEM</h1>
+      <img src="src/assets/images/baraja.png" ></img>
       <p>Conoce las cartas</p>
       <div className="cards-container">
         {cards.map((card) => (

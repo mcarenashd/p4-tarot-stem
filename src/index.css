@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Bebas+Neue&family=Cinzel+Decorative:wght@400;700;900&family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Bebas+Neue&family=Cinzel+Decorative:wght@400;700;900&family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap");
 
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -8,16 +10,12 @@ html, body, #root {
 }
 
 body {
-  /* 👇 1. Aquí defines el fondo de pantalla para TODAS las páginas */
-background: linear-gradient(-45deg, #0e032a, #2a0a4b, #3b1b6b, #1b073b);  
-  /* 👇 2. Aquí defines el tipo de letra para TODA la aplicación */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Puedes cambiar esta por la que prefieras */
-  
-  /* Asegúrate de que el color del texto sea visible sobre el fondo oscuro */
+  background: linear-gradient(-45deg, #0e032a, #2a0a4b, #3b1b6b, #1b073b);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
 
-h1{
+h1 {
   text-align: center;
   font-family: "Cinzel Decorative", serif;
   font-weight: 550;
@@ -25,7 +23,7 @@ h1{
   font-size: 3.5rem;
 }
 
-p{
+p {
   text-align: center;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -33,12 +31,12 @@ p{
   font-style: normal;
 }
 
-h2{
+h2 {
   text-align: center;
   font-family: "Cinzel Decorative", serif;
   font-weight: 550;
   font-style: normal;
-  font-size: 1.5rem;  
+  font-size: 1.5rem;
 }
 
 .nav-button {
@@ -49,7 +47,7 @@ h2{
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   text-decoration: none;
-  font-size: 2.0rem;
+  font-size: 2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 

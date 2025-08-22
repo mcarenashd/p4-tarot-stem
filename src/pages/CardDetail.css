@@ -67,6 +67,7 @@
   font-size: 1.0rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
   margin-top: 10px;
+  pointer-events: all;
 }
 .go-back-link{
     margin-top: 10px;

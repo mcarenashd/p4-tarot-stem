@@ -17,7 +17,6 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-
 function CardReading() {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -86,7 +85,7 @@ function CardReading() {
         <button className="nav-button-small" onClick={handleResetClick}>
           Resetear Lectura
         </button>
-        <button onClick={handleShuffleClick}>Barajar Cartas</button>
+        <button className="nav-button-small" onClick={handleShuffleClick}>Barajar Cartas</button>
         </div>
       </div>
 
