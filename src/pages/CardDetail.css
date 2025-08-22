@@ -1,75 +1,68 @@
-.tarot-image {
-  border-radius: 10px;
-  align-content: center;
+/* --- PAGE WRAPPER --- */
+.detail-page {
+  min-height: 100svh;
+  padding: clamp(12px, 2vw, 24px);
 }
 
+/* --- GRID LAYOUT (antes era flex con gap:10rem) --- */
 .cards-cont {
-  display: flex;
-  gap: 10rem;
-  padding: 1rem;
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;              /* móvil: 1 columna */
+  gap: clamp(16px, 2.5vw, 32px);           /* espacio fluido */
+  align-items: start;
 }
 
-.card-arcane {
-  border: 1px solid rgba(255, 254, 254, 0.3);
-  border-radius: 10px;
-  padding: 1rem;
-  /* width: 50vh; */
-  flex: 1;
-  text-align: center;
-  /* --- ESTILOS PARA LAS ESTRELLAS --- */
-
-  /* Capa 1: Estrellas pequeñas */
-  background-image: radial-gradient(
-      white,
-      rgba(255, 255, 255, 0.2) 2px,
-      transparent 35px
-    ),
-    /* Capa 2: Estrellas medianas */
-      radial-gradient(white, rgba(255, 255, 255, 0.1) 3px, transparent 15px),
-    /* Capa 3: Estrellas grandes y tenues */
-      radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 20px);
-
-  background-size: 550px 550px, 350px 350px, 250px 250px;
-  background-position: 0 0, 40px 60px, 130px 270px;
+@media (min-width: 768px) {
+  .cards-cont {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* desktop: 2 columnas */
+  }
 }
 
+/* --- PANELS --- */
+.card-arcane,
 .card-goddess {
-  border: 1px solid rgba(255, 254, 254, 0.3);
-  border-radius: 10px;
-  padding: 1rem;
-  /* width: 50vh; */
-  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: clamp(12px, 2vw, 20px);
   text-align: center;
-  /* --- ESTILOS PARA LAS ESTRELLAS --- */
 
-  /* Capa 1: Estrellas pequeñas */
-  background-image: radial-gradient(
-      white,
-      rgba(255, 255, 255, 0.2) 2px,
-      transparent 35px
-    ),
-    /* Capa 2: Estrellas medianas */
-      radial-gradient(white, rgba(255, 255, 255, 0.1) 3px, transparent 15px),
-    /* Capa 3: Estrellas grandes y tenues */
-      radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 20px);
-
+  /* Fondo de estrellas (tu mismo patrón) */
+  background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 35px),
+    radial-gradient(white, rgba(255,255,255,.1) 3px, transparent 15px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 20px);
   background-size: 550px 550px, 350px 350px, 250px 250px;
   background-position: 0 0, 40px 60px, 130px 270px;
 }
-.nav-button-small{
-  padding: 15px 30px;
-  color: black;
+
+/* --- IMAGES --- */
+.tarot-image,
+.goddess-image {
+  display: block;
+  width: min(100%, 360px);   /* responsive */
+  height: auto;
+  margin-inline: auto;       /* centradas */
+  border-radius: 10px;
+}
+
+/* --- BACK LINK --- */
+.go-back-link {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(12px, 2vw, 20px);
+}
+
+.nav-button-small {
+  padding: 12px 26px;
+  color: #000;
   background-color: #d4af37;
   font-family: "Inter", sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   text-decoration: none;
-  font-size: 1.0rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 10px;
-  pointer-events: all;
+  font-size: clamp(0.95rem, 1vw + .85rem, 1.1rem);
+  transition: background-color .2s ease, transform .2s ease;
 }
-.go-back-link{
-    margin-top: 10px;
-    text-align: center;
-}
+.nav-button-small:hover { transform: translateY(-2px) scale(1.02); }
