@@ -18,7 +18,6 @@
   }
 }
 
-/* --- PANELS --- */
 .card-arcane,
 .card-goddess {
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -26,7 +25,6 @@
   padding: clamp(12px, 2vw, 20px);
   text-align: center;
 
-  /* Fondo de estrellas (tu mismo patrón) */
   background-image:
     radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 35px),
     radial-gradient(white, rgba(255,255,255,.1) 3px, transparent 15px),
@@ -45,7 +43,6 @@
   border-radius: 10px;
 }
 
-/* --- BACK LINK --- */
 .go-back-link {
   display: flex;
   justify-content: center;

@@ -8,25 +8,17 @@ body { margin: 0; line-height: 1.5; }
 
 .home-background-container {
   min-height: 100svh;
-  width: 100%;
-  position: relative;
   display: grid;
-  grid-template-rows: auto 1fr; 
-  align-items: center;
-  justify-items: center;
+  grid-template-rows: auto 1fr;
+  place-items: center;
   gap: 1.5rem;
   padding: 1rem 1.25rem;
-  background-image: radial-gradient(
-      white,
-      rgba(255, 255, 255, 0.2) 2px,
-      transparent 35px
-    ),
-    radial-gradient(white, rgba(255, 255, 255, 0.1) 3px, transparent 15px),
-    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 20px);
+
+  background-image: var(--bg-stars);
   background-size: 550px 550px, 350px 350px, 250px 250px;
   background-position: 0 0, 40px 60px, 130px 270px;
+  background-repeat: repeat;
 }
-
 
 .title { text-align: center; max-width: 70ch; }
 .homeTitle {
